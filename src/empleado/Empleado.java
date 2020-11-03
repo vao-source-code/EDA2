@@ -13,12 +13,12 @@ public class Empleado extends Persona {
 	private Double sueldo;
 	private Caracter estado;
 
+	
 	public Empleado(Integer id) throws ExceptionEmpleado, ExceptionPersona {
 		super();
 
 		this.setID(id);
-	}
-
+	}  
 	public void setID(Integer id) throws ExceptionEmpleado {
 
 		if (id <= 0) {
