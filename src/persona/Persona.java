@@ -3,10 +3,7 @@ package persona;
 import calendar.ExceptionCalendar;
 import calendar.MiCalendar;
 
-/**
- *
- * @author victor
- */
+
 public class Persona {
 	int dni;
 	private String ap;
@@ -82,7 +79,7 @@ public class Persona {
 
 	public void setDni(int dni) throws ExceptionPersona {
 		if (dni <= 0)
-			throw new ExceptionPersona("DNI inválido");
+			throw new ExceptionPersona("DNI invalido");
 
 		this.dni = dni;
 	}
@@ -129,7 +126,7 @@ public class Persona {
 	}
 
 	public void setFechaNac(MiCalendar fechaNac) throws ExceptionCalendar {
-		if (fechaNac.getAño() > 1600) {
+		if (fechaNac.getAno() > 1600) {
 			switch (fechaNac.getMes()) {
 			case 4:
 			case 6:
@@ -139,7 +136,7 @@ public class Persona {
 					this.fechaNac = fechaNac;
 				break;
 			case 2:
-				if ((fechaNac.getAño() / 400 == 0) && (fechaNac.getAño() / 100 != 0)) {
+				if ((fechaNac.getAno() / 400 == 0) && (fechaNac.getAno() / 100 != 0)) {
 					if (fechaNac.getDia() < 29)
 						this.fechaNac = fechaNac;
 					else
@@ -168,7 +165,7 @@ public class Persona {
 				throw new ExceptionCalendar("mes invalido");
 			}
 		} else {
-			throw new ExceptionCalendar("año invalido");
+			throw new ExceptionCalendar("ano invalido");
 		}
 	}
 
@@ -177,7 +174,7 @@ public class Persona {
 		String ape = ap.length() > 30 ? ap.substring(0, 30) : ap;
 		String nomb = nom.length() > 30 ? nom.substring(0, 30) : nom;
 		return String.format("%08d", dni) + "\t" + String.format("%-10s", ape) + "\t" + String.format("%-10s", nomb)
-				+ "\t" + String.format("%02d/%02d/%4d", fechaNac.getDia(), fechaNac.getMes(), fechaNac.getAño()) + "\t"
+				+ "\t" + String.format("%02d/%02d/%4d", fechaNac.getDia(), fechaNac.getMes(), fechaNac.getAno()) + "\t"
 				+ sexo;
 	}
 

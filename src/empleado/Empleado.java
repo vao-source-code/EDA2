@@ -23,7 +23,7 @@ public class Empleado extends Persona {
 
 		if (id <= 0) {
 
-			throw new ExceptionEmpleado("ID inválido");
+			throw new ExceptionEmpleado("ID invalido");
 
 		} else {
 			this.id = id;
@@ -35,7 +35,7 @@ public class Empleado extends Persona {
 	public void setFechaIngreso(MiCalendar fechaIngreso) throws ExceptionCalendar {
 		MiCalendar f = this.getFechaNac();
 
-		int difa = fechaIngreso.getAño() - f.getAño();
+		int difa = fechaIngreso.getAno() - f.getAno();
 		int difm = fechaIngreso.getMes() - f.getMes();
 		int difd = fechaIngreso.getDia() - f.getDia();
 
@@ -61,7 +61,7 @@ public class Empleado extends Persona {
 	public String toString() {
 
 		return String.format("%04d", id) + "\t" + super.toString() + "\t"
-				+ String.format("%02d/%02d/%4d", fechaIngreso.getDia(), fechaIngreso.getMes(), fechaIngreso.getAño())
+				+ String.format("%02d/%02d/%4d", fechaIngreso.getDia(), fechaIngreso.getMes(), fechaIngreso.getAno())
 				+ "\t" + String.format("%05.2f", sueldo).replace(',', '.') + "\t" + estado + "\t";
 	}
 

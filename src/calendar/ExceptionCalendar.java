@@ -1,9 +1,6 @@
 package calendar;
 
-/**
-*
-* @author victor
-*/
+
 public class ExceptionCalendar extends Exception
 {
 

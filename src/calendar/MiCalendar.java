@@ -9,16 +9,12 @@ import static java.util.Calendar.DAY_OF_MONTH;
 import static java.util.Calendar.MONTH;
 import static java.util.Calendar.YEAR;
 
-/**
- *
- * @author victor
- */
 
 public class MiCalendar extends GregorianCalendar
 {
-	public MiCalendar(int dia, int mes, int año) throws ExceptionCalendar
+	public MiCalendar(int dia, int mes, int ano) throws ExceptionCalendar
 	{
-		super(año, mes - 1, dia);
+		super(ano, mes - 1, dia);
 		setLenient(false);
 		
 		try
@@ -29,7 +25,7 @@ public class MiCalendar extends GregorianCalendar
 		}
 		catch(Exception ex)
 		{
-			throw new ExceptionCalendar("La fecha " + dia + "/" + mes + "/" + año + " es Inválida");
+			throw new ExceptionCalendar("La fecha " + dia + "/" + mes + "/" + ano + " es Invalida");
 		}
 		
 	}
@@ -41,7 +37,7 @@ public class MiCalendar extends GregorianCalendar
 		
 		setDia(Integer.valueOf(campos[0]));
 		setMes(Integer.valueOf(campos[1]));
-		setAño(Integer.valueOf(campos[2]));
+		setAno(Integer.valueOf(campos[2]));
 	}
         
 	
@@ -53,7 +49,7 @@ public class MiCalendar extends GregorianCalendar
 	{
 		setDia(cal.get(DAY_OF_MONTH));
 		setMes(cal.get(MONTH) + 1);
-		setAño(cal.get(YEAR));
+		setAno(cal.get(YEAR));
 	}
 	
 	
@@ -69,7 +65,7 @@ public class MiCalendar extends GregorianCalendar
 	}
 	
 	
-	public int getAño()
+	public int getAno()
 	{
 		return get(YEAR);
 	}
@@ -87,16 +83,16 @@ public class MiCalendar extends GregorianCalendar
 	}
 	
 	
-	public void setAño(int año)
+	public void setAno(int ano)
 	{
-		set(YEAR, año);
+		set(YEAR, ano);
 	}
 	
 	
 	@Override
 	public String toString()
 	{
-		return String.format("%02d/%02d/%04d", getDia(), getMes(), getAño());
+		return String.format("%02d/%02d/%04d", getDia(), getMes(), getAno());
 	}
 
     public Date toDate() {
