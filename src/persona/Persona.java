@@ -6,15 +6,15 @@ import calendar.MiCalendar;
 
 public class Persona {
 	int dni;
-	private String ap;
-	private String nom;
+	private String apellido;
+	private String nombre;
 	private char sexo;
 	private MiCalendar fechaNac;
 
 	public Persona() {
 		this.dni = 0;
-		this.ap = "";
-		this.nom = "";
+		this.apellido = "";
+		this.nombre = "";
 		this.sexo = 'M';
 
 		try {
@@ -26,8 +26,8 @@ public class Persona {
 
 	public Persona(int dni) throws ExceptionPersona {
 		this.setDni(dni);
-		this.ap = "";
-		this.nom = "";
+		this.apellido = "";
+		this.nombre = "";
 		this.sexo = 'M';
 
 		try {
@@ -37,11 +37,11 @@ public class Persona {
 		}
 	}
 
-	public Persona(int dni, String ape, String nomb, char sexo, MiCalendar fechaNac)
+	public Persona(int dni, String apellido, String nombre, char sexo, MiCalendar fechaNac)
 			throws ExceptionPersona, ExceptionCalendar {
 		this.setDni(dni);
-		this.setAp(ape);
-		this.setNom(nomb);
+		this.setApellido(apellido);
+		this.setNombre(nombre);
 		this.setSexo(sexo);
 		this.setFechaNac(fechaNac);
 	}
@@ -50,8 +50,8 @@ public class Persona {
 		try {
 			String[] campos = linea.split("\t");
 			setDni(Integer.valueOf(campos[1]));
-			setAp(campos[2]);
-			setNom(campos[3]);
+			setApellido(campos[2]);
+			setNombre(campos[3]);
 			setFechaNac(new MiCalendar(campos[4]));
 			setSexo(campos[4].charAt(5));
 		} catch (ExceptionPersona ex) {
@@ -63,8 +63,8 @@ public class Persona {
 		try {
 			String[] campos = linea.split("\t");
 			setDni(Integer.valueOf(campos[1]));
-			setAp(campos[2]);
-			setNom(campos[3]);
+			setApellido(campos[2]);
+			setNombre(campos[3]);
 			setFechaNac(new MiCalendar(campos[4]));
 			setSexo(campos[4].charAt(5));
 		} catch (ExceptionPersona ex) {
@@ -84,26 +84,26 @@ public class Persona {
 		this.dni = dni;
 	}
 
-	public String getnom() {
-		return nom;
+	public String getNombre() {
+		return nombre;
 	}
 
-	public void setNom(String nom) throws ExceptionPersona {
-		if (nom == null)
+	public void setNombre(String nombre) throws ExceptionPersona {
+		if (nombre == null)
 			throw new ExceptionPersona("Apellido y Nombres nulo");
 
-		this.nom = nom.trim();
+		this.nombre = nombre.trim();
 	}
 
-	public String getAp() {
-		return ap;
+	public String getApellido() {
+		return apellido;
 	}
 
-	public void setAp(String ap) throws ExceptionPersona {
-		if (ap == null)
+	public void setApellido(String apellido) throws ExceptionPersona {
+		if (apellido == null)
 			throw new ExceptionPersona("Apellido y Nombres nulo");
 
-		this.ap = ap.trim();
+		this.apellido = apellido.trim();
 	}
 
 	public char getSexo() {
@@ -171,8 +171,8 @@ public class Persona {
 
 	@Override
 	public String toString() {
-		String ape = ap.length() > 30 ? ap.substring(0, 30) : ap;
-		String nomb = nom.length() > 30 ? nom.substring(0, 30) : nom;
+		String ape = apellido.length() > 30 ? apellido.substring(0, 30) : apellido;
+		String nomb = nombre.length() > 30 ? nombre.substring(0, 30) : nombre;
 		return String.format("%08d", dni) + "\t" + String.format("%-10s", ape) + "\t" + String.format("%-10s", nomb)
 				+ "\t" + String.format("%02d/%02d/%4d", fechaNac.getDia(), fechaNac.getMes(), fechaNac.getAno()) + "\t"
 				+ sexo;
