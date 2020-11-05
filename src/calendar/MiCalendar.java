@@ -12,7 +12,7 @@ import static java.util.Calendar.YEAR;
 
 public class MiCalendar extends GregorianCalendar
 {
-	public MiCalendar(int dia, int mes, int ano) throws ExceptionCalendar
+	public MiCalendar(Integer dia, Integer mes, Integer ano) throws ExceptionCalendar
 	{
 		super(ano, mes - 1, dia);
 		setLenient(false);
@@ -53,37 +53,37 @@ public class MiCalendar extends GregorianCalendar
 	}
 	
 	
-	public int getDia()
+	public Integer getDia()
 	{
 		return get(DAY_OF_MONTH);
 	}
 	
 	
-	public int getMes()
+	public Integer getMes()
 	{
 		return get(MONTH) + 1;
 	}
 	
 	
-	public int getAno()
+	public Integer getAno()
 	{
 		return get(YEAR);
 	}
 	
 	
-	public void setDia(int dia)
+	public void setDia(Integer dia)
 	{
 		set(DAY_OF_MONTH, dia);
 	}
 	
 	
-	public void setMes(int mes)
+	public void setMes(Integer mes)
 	{
 		set(MONTH, mes-1);
 	}
 	
 	
-	public void setAno(int ano)
+	public void setAno(Integer ano)
 	{
 		set(YEAR, ano);
 	}

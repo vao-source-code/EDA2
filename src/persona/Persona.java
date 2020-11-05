@@ -5,10 +5,10 @@ import calendar.MiCalendar;
 
 
 public class Persona {
-	int dni;
+	private Integer dni;
 	private String apellido;
 	private String nombre;
-	private char sexo;
+	private Character sexo;
 	private MiCalendar fechaNac;
 
 	public Persona() {
@@ -24,7 +24,7 @@ public class Persona {
 		}
 	}
 
-	public Persona(int dni) throws ExceptionPersona {
+	public Persona(Integer dni) throws ExceptionPersona {
 		this.setDni(dni);
 		this.apellido = "";
 		this.nombre = "";
@@ -37,7 +37,7 @@ public class Persona {
 		}
 	}
 
-	public Persona(int dni, String apellido, String nombre, char sexo, MiCalendar fechaNac)
+	public Persona(Integer dni, String apellido, String nombre, Character sexo, MiCalendar fechaNac)
 			throws ExceptionPersona, ExceptionCalendar {
 		this.setDni(dni);
 		this.setApellido(apellido);
@@ -73,11 +73,11 @@ public class Persona {
 
 	}
 
-	public int getDni() {
+	public Integer getDni() {
 		return dni;
 	}
 
-	public void setDni(int dni) throws ExceptionPersona {
+	public void setDni(Integer dni) throws ExceptionPersona {
 		if (dni <= 0)
 			throw new ExceptionPersona("DNI invalido");
 
@@ -106,11 +106,11 @@ public class Persona {
 		this.apellido = apellido.trim();
 	}
 
-	public char getSexo() {
+	public Character getSexo() {
 		return sexo;
 	}
 
-	public void setSexo(char sexo) throws ExceptionPersona {
+	public void setSexo(Character sexo) throws ExceptionPersona {
 		if (Character.isUpperCase(sexo)) {
 			sexo = Character.toUpperCase(sexo);
 		}

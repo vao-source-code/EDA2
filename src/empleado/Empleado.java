@@ -35,9 +35,9 @@ public class Empleado extends Persona {
 	public void setFechaIngreso(MiCalendar fechaIngreso) throws ExceptionCalendar {
 		MiCalendar f = this.getFechaNac();
 
-		int difa = fechaIngreso.getAno() - f.getAno();
-		int difm = fechaIngreso.getMes() - f.getMes();
-		int difd = fechaIngreso.getDia() - f.getDia();
+		Integer difa = fechaIngreso.getAno() - f.getAno();
+		Integer difm = fechaIngreso.getMes() - f.getMes();
+		Integer difd = fechaIngreso.getDia() - f.getDia();
 
 		if (difa > 18) {
 			this.fechaIngreso = fechaIngreso;
