@@ -4,19 +4,20 @@ import calendar.MiCalendar;
 
 import persona.ExceptionPersona;
 import persona.Persona;
+import sector.Sector;
 
 public class Gerente extends Persona{
 
 	private Integer id;
 	private Double sueldo;
-	private String sector;
+	private Sector sector;
 	
 	
-	public Gerente(Integer id, Double sueldo, String sector) throws ExcepcionesGerente, ExceptionPersona{
+	public Gerente(Integer id, Double sueldo, Sector sector) throws ExcepcionesGerente, ExceptionPersona{
 		super();
 		this.id = id;
 		this.sueldo = sueldo;
-		this.sector = sector;
+		
 	}
 	
 	public Integer getId() {
@@ -36,13 +37,15 @@ public class Gerente extends Persona{
 		this.sueldo = sueldo;
 	}
 
-	public String getSector() {
+	public Sector getSector() {
 		return sector;
 	}
 
-	public void setSector(String sector) {
+	public void setSector(Sector sector) {
 		this.sector = sector;
 	}
+
+
 		
 	
 }

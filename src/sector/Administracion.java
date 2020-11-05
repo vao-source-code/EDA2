@@ -1,7 +1,8 @@
 package sector;
 
-public enum Administracion {
+public class Administracion {
 
-	contabilidad, tesoreria
+
+
 	
 }

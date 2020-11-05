@@ -1,7 +1,7 @@
 package sector;
 
-public enum Ventas {
+public class Ventas {
 
-	Finanzas, relacionesPublicas, marketing
+	
 	
 }

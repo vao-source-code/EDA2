@@ -1,7 +1,7 @@
 package sector;
 
-public enum Rrhh {
+public class Rrhh {
 
-	relacionesLaborales, seleccion, salariosYBeneficios
+	
 	
 }

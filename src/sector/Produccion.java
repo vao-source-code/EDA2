@@ -1,7 +1,7 @@
 package sector;
 
-public enum Produccion {
+public class Produccion {
 
-	gestionDeCalidad, fabricacion, insumos
+	
 	
 }
