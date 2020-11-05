@@ -1,6 +1,8 @@
 package gerente;
 
 import calendar.MiCalendar;
+
+import persona.ExceptionPersona;
 import persona.Persona;
 
 public class Gerente extends Persona{
@@ -10,7 +12,7 @@ public class Gerente extends Persona{
 	private String sector;
 	
 	
-	public Gerente(Integer id, Double sueldo, String sector) {
+	public Gerente(Integer id, Double sueldo, String sector) throws ExcepcionesGerente, ExceptionPersona{
 		super();
 		this.id = id;
 		this.sueldo = sueldo;

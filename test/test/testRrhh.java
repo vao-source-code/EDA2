@@ -7,7 +7,7 @@ import org.junit.Test;
 public class testRrhh {
 
 	@Test
-	public void test() {
+	public void queNoSePuedaAgregarDosGerentesEnElMismoSector() {
 		
 		
 	}
